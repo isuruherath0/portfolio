@@ -1,8 +1,13 @@
+import Hero from "@/sections/Hero";
+import About from "@/sections/About";
+import Projects from "@/sections/Projects";
+
 export default function Home() {
   return(
-    <main>
-      <h1>Isuru Herath</h1>
-      <p>Software Engineer</p>
-    </main>
+    <>
+      <Hero />
+      <About />
+      <Projects />
+    </>
   )
 }
