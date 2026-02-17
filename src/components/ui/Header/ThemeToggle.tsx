@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function getInitialTheme(): boolean {
   if (typeof window === 'undefined') return false;
@@ -10,16 +10,16 @@ function getInitialTheme(): boolean {
 }
 
 export default function ThemeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const dark = getInitialTheme();
-    // Sync the DOM class on first render, before paint
-    if (dark) {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => getInitialTheme());
+
+  // Sync the DOM class on mount and when theme changes
+  useEffect(() => {
+    if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-    return dark;
-  });
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
