@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function EducationItem( { logo, institution, degree, dates }: EducationItemProps) {
   return (
-    <div className="flex space-x-4 mb-3">
+    <div className="flex space-x-4 mb-4">
       {/* Institution Logo */}
       <Image
         width={90}
@@ -14,7 +14,7 @@ export default function EducationItem( { logo, institution, degree, dates }: Edu
       />
       {/* Institution Details */}
       <div>
-        <p className="font-semibold">{degree}</p>
+        <p className="font-semibold text-base">{degree}</p>
         <p className="text-sm text-gray-600">{institution}</p>
         <p className="text-sm text-gray-600">{dates}</p>
       </div>

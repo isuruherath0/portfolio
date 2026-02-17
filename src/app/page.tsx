@@ -1,6 +1,6 @@
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
-import Projects from "@/sections/Projects";
+// import Projects from "@/sections/Projects";
 import Overview from "@/sections/Overview";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <Overview />
       <About />
-      <Projects />
+      {/* <Projects /> */}
     </>
   )
 }
