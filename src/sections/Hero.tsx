@@ -25,7 +25,7 @@ export default function Hero() {
         localStorage.getItem('theme') ||
         (document.documentElement.classList.contains('dark') ? 'dark' : 'light');
 
-      setGlowIntensity(currentTheme === 'dark' ? 0.3 : 0.03);
+      setGlowIntensity(currentTheme === 'dark' ? 0.2 : 0.03);
     };
 
     window.addEventListener('storage', handleThemeChange);
