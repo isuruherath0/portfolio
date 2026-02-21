@@ -2,7 +2,7 @@
 
 import ThemeToggle from "../ui/Header/ThemeToggle";
 import Image from "next/image";
-import me from "@/assets/images/me.jpg";
+import icon_bg_grey from "@/assets/images/icon_bg_grey.png";
 
 export default function Header() {
   return (
@@ -14,7 +14,7 @@ export default function Header() {
             <Image
               width={40}
               height={40}
-              src={me.src}
+              src={icon_bg_grey.src}
               alt="Logo"
               className="w-10 h-10 rounded-full object-cover"
             />
