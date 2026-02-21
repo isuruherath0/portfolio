@@ -64,7 +64,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center">
+      <div className="relative z-10 flex flex-col items-center px-4 sm:px-0">
         <h1 className="text-5xl">
           <TextType
             typingSpeed={75}
