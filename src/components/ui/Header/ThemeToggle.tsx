@@ -39,15 +39,15 @@ export default function ThemeToggle() {
       aria-checked={isDarkMode}
       onClick={toggleTheme}
       className={`relative inline-flex h-8 w-16 items-center rounded-full transition-colors ${
-        isDarkMode ? 'bg-gray-800' : 'bg-yellow-400'
+        isDarkMode ? 'bg-gray-800' : 'bg-gray-300'
       }`}
     >
       <span
-        className={`absolute left-1 top-1 inline-block h-6 w-6 transform rounded-full bg-white text-lg flex items-center justify-center transition-transform ${
-          isDarkMode ? 'translate-x-8' : 'translate-x-0'
+        className={`absolute left-1 top-1 inline-block h-6 w-6 transform rounded-full text-lg flex items-center justify-center transition-transform ${
+          isDarkMode ? 'translate-x-8 bg-white text-black' : 'translate-x-0 bg-black text-white'
         }`}
       >
-        {isDarkMode ? '🌙' : '☀️'}
+        {isDarkMode ? '☾' : '𖤓'}
       </span>
     </button>
   );

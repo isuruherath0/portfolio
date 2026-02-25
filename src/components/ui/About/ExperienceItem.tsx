@@ -1,9 +1,12 @@
 import { ExperienceItemProps } from "@/types/about.types";
 import Image from "next/image";
 
-export default function ExperienceItem({ logo, company, employmentType, roles }: ExperienceItemProps) {
+export default function ExperienceItem({ logo, company, employmentType, roles, href }: ExperienceItemProps) {
+  const Wrapper = href ? 'a' : 'div';
+  const wrapperProps = href ? { href, target: '_blank', rel: 'noopener noreferrer', className: 'flex space-x-3 mb-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 p-2 rounded-lg transition-colors -m-2' } : { className: 'flex space-x-3 mb-4' };
+  
   return (
-    <div className="flex space-x-3 mb-4">
+    <Wrapper {...wrapperProps}>
       {/* Company Logo */}
       <Image
         width={48}
@@ -21,11 +24,6 @@ export default function ExperienceItem({ logo, company, employmentType, roles }:
 
         {/* Roles */}
         <div className="relative">
-          {/* Vertical Line */}
-          {roles.length > 1 && (
-            <div className="absolute left-[5px] top-2 bottom-2 w-[2px] bg-gray-300"></div>
-          )}
-
           {roles.map((role, index) => (
             <div
               key={index}
@@ -39,10 +37,24 @@ export default function ExperienceItem({ logo, company, employmentType, roles }:
                 <h4 className="font-semibold text-sm leading-snug">{role.title}</h4>
                 <p className="text-xs text-gray-500 whitespace-nowrap pt-[1px]">{role.dates}</p>
               </div>
+              
+              {/* Projects */}
+              {role.projects && role.projects.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-1.5">
+                  {role.projects.map((project) => (
+                    <span
+                      key={project}
+                      className="px-2 py-0.5 text-xs bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
+                    >
+                      {project}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 }

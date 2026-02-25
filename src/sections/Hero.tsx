@@ -14,7 +14,7 @@ export default function Hero() {
       theme === 'dark' ||
       (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-    return isDark ? 0.2 : 0.03;
+    return isDark ? 0.1 : 0.03;
   };
 
   const [glowIntensity, setGlowIntensity] = useState(getInitialGlow);
@@ -25,7 +25,7 @@ export default function Hero() {
         localStorage.getItem('theme') ||
         (document.documentElement.classList.contains('dark') ? 'dark' : 'light');
 
-      setGlowIntensity(currentTheme === 'dark' ? 0.2 : 0.03);
+      setGlowIntensity(currentTheme === 'dark' ? 0.1 : 0.03);
     };
 
     window.addEventListener('storage', handleThemeChange);
