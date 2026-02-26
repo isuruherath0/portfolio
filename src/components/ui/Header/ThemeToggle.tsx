@@ -43,11 +43,13 @@ export default function ThemeToggle() {
       }`}
     >
       <span
-        className={`absolute left-1 top-1 inline-block h-6 w-6 transform rounded-full text-lg flex items-center justify-center transition-transform ${
+        className={`absolute left-1 top-1 inline-block h-6 w-6 transform rounded-full flex items-center justify-center transition-transform ${
           isDarkMode ? 'translate-x-8 bg-white text-black' : 'translate-x-0 bg-black text-white'
         }`}
       >
-        {isDarkMode ? '☾' : '𖤓'}
+        <span className="text-sm leading-none">
+          {isDarkMode ? '⏾' : '☀︎'}
+        </span>
       </span>
     </button>
   );
