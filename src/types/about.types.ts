@@ -31,5 +31,3 @@ export type {
   EducationItemProps,
   PublicationItemProps,
 };
-
-//null comment

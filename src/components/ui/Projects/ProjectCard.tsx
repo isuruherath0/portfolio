@@ -41,20 +41,20 @@ export default function ProjectCard({
 
       {/* All tech chips on same line */}
       <div className="flex flex-wrap gap-1.5">
-        {frameworks.map((framework) => (
-          <span
-            key={framework}
-            className="px-2.5 py-1 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
-          >
-            {framework}
-          </span>
-        ))}
         {languages.map((language) => (
           <span
             key={language}
             className="px-2.5 py-1 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full"
           >
             {language}
+          </span>
+        ))}
+        {frameworks.map((framework) => (
+          <span
+            key={framework}
+            className="px-2.5 py-1 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
+          >
+            {framework}
           </span>
         ))}
         {technologies.map((tech) => (
