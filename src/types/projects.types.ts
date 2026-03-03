@@ -5,6 +5,8 @@ interface ProjectCardProps {
   languages: string[];
   technologies: string[];
   tags: string[];
+  href?: string;
+  company?: string;
 }
 
 export type { ProjectCardProps };
